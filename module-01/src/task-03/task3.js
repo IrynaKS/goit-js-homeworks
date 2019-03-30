@@ -1,6 +1,6 @@
 'use strict';
 
-const userCountryChoise = prompt(`Выберите страну доставки!`);
+let userCountryChoise = prompt(`Выберите страну доставки!`);
 
 const chinaShipping = 100;
 const southAmericaShipping = 250;
@@ -9,7 +9,11 @@ const indiaShipping = 80;
 const jamaicaShipping = 120;
 let message;
 
-switch (userCountryChoise.toLowerCase()) {
+if (userCountryChoise) {
+  userCountryChoise = userCountryChoise.toLowerCase().trim();
+}
+
+switch (userCountryChoise) {
   case 'китай':
     message = `Доставка в ${userCountryChoise} будет стоить ${chinaShipping} кредитов`;
     break;

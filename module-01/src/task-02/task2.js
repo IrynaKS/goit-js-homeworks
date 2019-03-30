@@ -3,11 +3,14 @@
 const credits = 23580;
 const pricePerDroid = 3000;
 
-const promptLabel = `Укажите количество дроидов, которое Вы хотите приобрести`;
+let promptLabel = `Укажите количество дроидов, которое Вы хотите приобрести`;
 
 let userChoise = prompt(promptLabel);
 let totalPrice = pricePerDroid * userChoise;
-if (totalPrice > credits) {
+let message;
+if (userChoise === null) {
+  alert((message = 'Отменено пользователем'));
+} else if (totalPrice > credits) {
   alert((message = 'Недостаточно средств на счету!'));
 } else {
   alert(
@@ -40,4 +43,3 @@ console.log(message);
 // в противном случае необходимо посчитать остаток кредитов на
 // счету и вывести сообщение 'Вы купили [число] дроидов,
 // на счету осталось [число] кредитов.'.
-
