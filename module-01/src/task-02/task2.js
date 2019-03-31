@@ -7,19 +7,19 @@ let promptLabel = `Укажите количество дроидов, кото�
 
 let userChoise = prompt(promptLabel);
 let totalPrice = pricePerDroid * userChoise;
-let message;
+// let message;
 if (userChoise === null) {
-  alert((message = 'Отменено пользователем'));
+  console.log('Отменено пользователем');
 } else if (totalPrice > credits) {
-  alert((message = 'Недостаточно средств на счету!'));
+  console.log('Недостаточно средств на счету!');
 } else {
-  alert(
-    (message = `Вы купили ${userChoise} дроидов, на счету осталось ${credits -
-      totalPrice} кредитов.`),
+  console.log(
+    `Вы купили ${userChoise} дроидов, на счету осталось ${credits -
+      totalPrice} кредитов.`,
   );
 }
 
-console.log(message);
+// console.log(message);
 
 //ЗАДАЧА 2
 

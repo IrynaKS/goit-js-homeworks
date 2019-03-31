@@ -1,18 +1,18 @@
 'use strict';
-
 const adminPass = prompt('Введите, пожалуйста, пароль!');
 const ADMIN_PASSWORD = 'm4ng0h4ckz';
+
 let message;
 
 if (adminPass === null) {
-  alert((message = 'Отменено пользователем!'));
+  message = 'Отменено пользователем!';
 } else if (adminPass !== ADMIN_PASSWORD) {
-  alert((message = 'Доступ запрещен, неверный пароль!'));
+  message = 'Доступ запрещен, неверный пароль!';
 } else {
-  alert((message = 'Добро пожаловать!'));
+  message = 'Добро пожаловать!';
 }
 
-console.log(message);
+alert(message);
 
 //ЗАДАЧА 1
 // Напиши скрипт имитирующий авторизацию администратора в панели управления.

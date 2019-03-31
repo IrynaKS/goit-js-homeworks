@@ -1,44 +1,49 @@
 'use strict';
 
-let userCountryChoise = prompt(`Выберите страну доставки!`);
+const userCountryChoise = prompt(`Выберите страну доставки!`);
 
-const chinaShipping = 100;
-const southAmericaShipping = 250;
-const australiaShipping = 170;
-const indiaShipping = 80;
-const jamaicaShipping = 120;
-let message;
-
-if (userCountryChoise) {
-  userCountryChoise = userCountryChoise.toLowerCase().trim();
+if (userCountryChoise === null) {
+  console.log('Отменено пользователем');
+} else if (userCountryChoise === '') {
+  console.log('Введите страну доставки!');
 }
+const country = userCountryChoise.toLowerCase();
 
-switch (userCountryChoise) {
+switch (country) {
   case 'китай':
-    message = `Доставка в ${userCountryChoise} будет стоить ${chinaShipping} кредитов`;
+    const chinaShipping = 100;
+    console.log(`Доставка в ${country} будет стоить ${chinaShipping} кредитов`);
     break;
 
   case 'южная америка':
-    message = `Доставка в ${userCountryChoise} будет стоить ${southAmericaShipping} кредитов`;
+    const southAmericaShipping = 250;
+    console.log(
+      `Доставка в ${country} будет стоить ${southAmericaShipping} кредитов`,
+    );
     break;
 
   case 'австралия':
-    message = `Доставка в ${userCountryChoise} будет стоить ${australiaShipping} кредитов`;
+    const australiaShipping = 170;
+    console.log(
+      `Доставка в ${country} будет стоить ${australiaShipping} кредитов`,
+    );
     break;
 
   case 'индия':
-    message = `Доставка в ${userCountryChoise} будет стоить ${indiaShipping} кредитов`;
+    const indiaShipping = 80;
+    console.log(`Доставка в ${country} будет стоить ${indiaShipping} кредитов`);
     break;
 
   case 'ямайка':
-    message = `Доставка в ${userCountryChoise} будет стоить ${jamaicaShipping} кредитов`;
+    const jamaicaShipping = 120;
+    console.log(
+      `Доставка в ${country} будет стоить ${jamaicaShipping} кредитов`,
+    );
     break;
 
   default:
-    message = 'В вашей стране доставка не доступна';
+    console.log('В вашей стране доставка не доступна');
 }
-
-console.log(message);
 
 //ЗАДАЧА 3
 // Пользователь может оформить доставку товара к себе в страну,
