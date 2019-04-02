@@ -2,11 +2,9 @@
 
 const userCountryChoise = prompt(`Выберите страну доставки!`);
 
-if (userCountryChoise === null) {
-  console.log('Отменено пользователем');
-} else if (userCountryChoise === '') {
-  console.log('Введите страну доставки!');
-}
+if (userCountryChoise === null || userCountryChoise === '') {
+  console.log('Страна доставки не выбрана!');
+} else {
 const country = userCountryChoise.toLowerCase();
 
 switch (country) {
@@ -43,6 +41,7 @@ switch (country) {
 
   default:
     console.log('В вашей стране доставка не доступна');
+}
 }
 
 //ЗАДАЧА 3
