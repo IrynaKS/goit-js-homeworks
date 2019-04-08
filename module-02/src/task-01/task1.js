@@ -6,19 +6,17 @@ let total = 0;
 
 do {
   input = prompt('Введите число');
-  if (Number.isNaN(Number(input)) !== false) {
+  if (Number.isNaN(Number(input))) {
     alert('Было введено не число, попробуйте еще раз');
   } else if (input !== null) {
-    numbers.push(Number(input));
-    console.log(input);
+    numbers.push(+input);
   }
 } while (input !== null);
-for (let i = 0; i < numbers.length; i += 1) {
-  total += numbers[i];
-  console.log(numbers);
+for (const number of numbers) {
+  total += number;
+  console.log(number);
 }
 console.log(`Общая сумма чисел равна ${total} `);
-
 
 // 1. Задание 1
 // Напиши скрипт со следующим функционалом:

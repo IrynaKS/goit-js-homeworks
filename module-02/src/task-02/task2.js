@@ -8,15 +8,17 @@ do {
   attemptsLeft -= 1;
   if (userPass === null) {
     break;
-  } else if (passwords.includes(userPass)) {
+  }
+  if (passwords.includes(userPass)) {
     alert('Добро пожаловать!');
     break;
-  } else if (attemptsLeft > 0 && attemptsLeft < 3) {
+  }
+  if (attemptsLeft) {
     alert(`Неверный пароль, у вас осталось ${attemptsLeft} попыток`);
-  } else if (attemptsLeft <= 0) {
+  } else {
     alert('У вас закончились попытки, аккаунт заблокирован!');
   }
-} while (attemptsLeft > 0);
+} while (attemptsLeft);
 
 
 
