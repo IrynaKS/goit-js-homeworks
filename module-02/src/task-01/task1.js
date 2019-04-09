@@ -12,11 +12,12 @@ do {
     numbers.push(+input);
   }
 } while (input !== null);
+if (numbers.length !==0) {
 for (const number of numbers) {
   total += number;
-  console.log(number);
 }
 console.log(`Общая сумма чисел равна ${total} `);
+}
 
 // 1. Задание 1
 // Напиши скрипт со следующим функционалом:
