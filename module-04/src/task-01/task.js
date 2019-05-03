@@ -59,13 +59,15 @@ const notepad = {
      *
      * Принимает: идентификатор заметки и объект, полями которого надо обновить заметку
      * Возвращает: обновленную заметку
+     *
      */
-    const updateNote = {
-      ...this.findNoteById(id),
-      ...updatedContent
-    };
 
-    return updateNote;
+    const note = this.findNoteById(id);
+    if (!note) {
+      return;
+    }
+    Object.assign(note, updatedContent);
+    return note;
   },
   updateNotePriority(id, priority) {
     /*
